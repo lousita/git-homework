@@ -6,12 +6,16 @@ on va délibérément créer un conflit, pour s'entraîner à gérer ce cas-là
 
 ## rappel : c'est quoi un conflit ?
 
-lorsque deux branches modifient **la même ligne de code**, alors au moment de les fusionner le code qui fait la fusion automatique **ne sait pas** quelle version prendre
+lorsque deux branches modifient **la même ligne de code**, alors au moment de
+les fusionner avec `git merge`, le code qui fait la fusion automatique **ne sait
+pas** quelle version prendre
 
 ## comment ça se manifeste ?
 
-* on reçoit un message d'erreur dans le terminal au moment du *merge* ou du *pull* (et souvenez-vous que *pull* aussi fait un *merge*)
-* dans ce cas là le fichier **les deux versions** sont conservées dans le fichier sous la forme
+* on reçoit un message d'erreur dans le terminal au moment du *merge* (ou du
+  *pull*, puisque souvenez-vous: *pull* aussi fait un *merge*)
+* dans ce cas là le fichier **les deux versions** sont conservées dans le
+  fichier sous la forme
 
     ```text
     <<<<<<< HEAD
@@ -46,10 +50,12 @@ lorsque deux branches modifient **la même ligne de code**, alors au moment de l
 
 * revenez sur le premier commit en créant une nouvelle branche `devel`
 
-**indice** on rappelle la commande `git switch -c` pour, en une seule commande:
+```{admonition} ndice
+on rappelle la commande `git switch -c` pour, en une seule commande:
 
 * créer une nouvelle branche
 * et l'adopter en même temps comme branche courante
+```
 
 ### commit #3 : version 3
 
@@ -68,7 +74,10 @@ vous devez avoir un diagramme qui contient
 
 * puisque nous sommes sur `devel`, fusionnez la branche `main`
 
-**indice**: on donne à `git merge` le commit à fusionner (sous-entendu, dans la branche courante)
+```{admonition} indice:
+on donne à `git merge` le commit à fusionner
+(sous-entendu, dans la branche courante)
+ ```
 
 normalement on est en situation de conflit, et vous devez voir les symptômes décrits au dessus à la rubrique *comment ça se manifeste ?*
 
@@ -80,10 +89,12 @@ normalement on est en situation de conflit, et vous devez voir les symptômes d�
 
 * allez à ce stade éditer le fichier `README.md` dans vs-code
 * observez les outils proposés pour gérer le conflit
-* mettez `4` comme numéro de version  
-  attention, soyez bien sûr d'avoir éliminé toutes les scories qui ne sont là
+* mettez `4` comme numéro de version
+  ```{admonition} **ATTENTION**
+  soyez bien sûr d'avoir éliminé toutes les scories qui ne sont là
   que pour nous aider à raisonner; le fichier que vous sauvez doit ressembler au
   README du départ, bien sûr
+  ```
 
 ### `git status` après
 
@@ -118,4 +129,4 @@ dans tous les cas, à ce stade vous devez avoir
      \ 3 /
   ```
 
-* avec le numéro de version dans le README.md correspondant
+* avec le numéro de version dans le `README.md` correspondant
